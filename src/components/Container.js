@@ -5,55 +5,54 @@ import API from "../utils/API";
 
 class Container extends Component {
   state = {
-    search: "",
-    results: []
+    
+    people: []
   };
 
 
   
   componentDidMount() {
-    this.employees();
-  }
-
-
-  
-  employees = () => {
-
-   
     API.fetch()
-    .then(res => this.setState({ results: res.data.results}))
+    .then(res => this.setState({ people: res.data.results}))
     .catch(err => console.log(err));
-    console.log(this.state.results);
+    console.log(this.state.people); 
+  }
+
+  handleFormSubmitWomen = event => {
+
+    event.preventDefault();
+    alert(`Hello ${this.state}`);
+    API.fetchWomen()
+    .then(res => this.setState({ people: res.data.results}))
+    .catch(err => console.log(err));
+    console.log(this.state.people); 
     
   }
-  
-  
-  
-  handleInputChange = event => {
-    const name = event.target.name;
-    const value = event.target.value;
-    this.setState({
-      [name]: value
-    });
-  };
-  
-  // When the form is submitted, search the Giphy API for `this.state.search`
-  // handleFormSubmit = event => {
-    // event.preventDefault();
+
+  handleFormSubmitMen = event => {
+
+    event.preventDefault();
+    alert(`Hello ${this.state}`);
+    API.fetchMen()
+    .then(res => this.setState({ people: res.data.results}))
+    .catch(err => console.log(err));
+    console.log(this.state.people); 
     
-  // };
+  }
 
 
 
+  
   render() {
     return (
       <div>
         <SearchForm
-          search={this.state.search}
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
+          all = {this.state.people}
+          handleFormSubmitWomen={this.handleFormSubmitWomen}
+          // handleInputChange={this.handleInputChange}
+          handleFormSubmitMen = {this.handleFormSubmitMen}
         />
-        <Result results={this.state.results} />
+        <Result all={this.state.people}  />
       </div>
     );
   }
