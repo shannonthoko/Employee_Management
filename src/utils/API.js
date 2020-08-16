@@ -2,23 +2,22 @@ import axios from "axios";
 
 const BASEURL = "https://randomuser.me/api/";
 
-const women = "/?gender=female"
-
-//const fifty = "/?results=50"
-const men = "/?gender=male"
+const fifty = "/?results=50"
+const women = "&&gender=female"
+const men = "&&gender=male"
 
 export default {
   fetch: function() {
-    return axios.get(BASEURL);
+    return axios.get(BASEURL + fifty);
   },
 
   fetchWomen: function () {
 
-    return axios.get(BASEURL + women);
+    return axios.get(BASEURL + fifty + women);
   },
 
   fetchMen: function () {
 
-    return axios.get(BASEURL + men);
+    return axios.get(BASEURL + fifty + men);
   }
 };

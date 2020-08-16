@@ -21,18 +21,20 @@ class Container extends Component {
   handleFormSubmitWomen = event => {
 
     event.preventDefault();
-    alert(`Hello ${this.state}`);
+
+    
+    //alert(`Hello ${this.state}`);
     API.fetchWomen()
     .then(res => this.setState({ people: res.data.results}))
     .catch(err => console.log(err));
-    console.log(this.state.people); 
+    
     
   }
 
   handleFormSubmitMen = event => {
 
     event.preventDefault();
-    alert(`Hello ${this.state}`);
+    //alert(`Hello ${this.state}`);
     API.fetchMen()
     .then(res => this.setState({ people: res.data.results}))
     .catch(err => console.log(err));
