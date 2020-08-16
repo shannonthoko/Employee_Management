@@ -6,7 +6,7 @@ import API from "../utils/API";
 
 class Container extends Component {
   state = {
-    
+    search: "",
     people: []
   };
 
@@ -21,6 +21,7 @@ class Container extends Component {
     API.fetch()
     .then(res => this.setState({ people: res.data.results}))
     .catch(err => console.log(err));
+    console.log(this.state.people);
   }
 
   
