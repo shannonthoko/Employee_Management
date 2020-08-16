@@ -52,6 +52,22 @@ class Container extends Component {
     
   }
 
+  handleInputChange = event => {
+    this.setState({ search: event.target.value });
+  };
+
+  handleFormSubmitSearch = event => {
+
+    event.preventDefault();
+    const response = this.state.people
+    console.log(response);
+    const filterName = response.filter(name => name.first === this.state.search);
+    this.setState({people: filterName});
+    
+
+
+  }
+
 
 
   
@@ -63,6 +79,8 @@ class Container extends Component {
           handleFormSubmitWomen={this.handleFormSubmitWomen}
           handleFormSubmit={this.handleFormSubmit}
           handleFormSubmitMen = {this.handleFormSubmitMen}
+          handleInputChange = {this.handleInputChange}
+          handleFormSubmitSearch = {this.handleFormSubmitSearch}
         />
         <Result all={this.state.people}  />
        
