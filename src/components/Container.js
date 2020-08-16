@@ -3,6 +3,7 @@ import SearchForm from "./SearchForm";
 import Result from "./Result";
 import API from "../utils/API";
 
+
 class Container extends Component {
   state = {
     
@@ -12,18 +13,27 @@ class Container extends Component {
 
   
   componentDidMount() {
+    this.seeAll();
+    
+  }
+
+  seeAll (){
     API.fetch()
     .then(res => this.setState({ people: res.data.results}))
     .catch(err => console.log(err));
-    console.log(this.state.people); 
+  }
+
+  
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.seeAll();
+
   }
 
   handleFormSubmitWomen = event => {
 
     event.preventDefault();
-
-    
-    //alert(`Hello ${this.state}`);
     API.fetchWomen()
     .then(res => this.setState({ people: res.data.results}))
     .catch(err => console.log(err));
@@ -34,11 +44,10 @@ class Container extends Component {
   handleFormSubmitMen = event => {
 
     event.preventDefault();
-    //alert(`Hello ${this.state}`);
     API.fetchMen()
     .then(res => this.setState({ people: res.data.results}))
     .catch(err => console.log(err));
-    console.log(this.state.people); 
+    
     
   }
 
@@ -51,13 +60,14 @@ class Container extends Component {
         <SearchForm
           all = {this.state.people}
           handleFormSubmitWomen={this.handleFormSubmitWomen}
-          // handleInputChange={this.handleInputChange}
+          handleFormSubmit={this.handleFormSubmit}
           handleFormSubmitMen = {this.handleFormSubmitMen}
         />
         <Result all={this.state.people}  />
+       
       </div>
     );
   }
-}
+};
 
 export default Container;
