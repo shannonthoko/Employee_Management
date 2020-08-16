@@ -14,7 +14,7 @@ function Result(props) {
       ))}
     </ul>
 
-    // <li> Name: <img alt={results.name} className="img-fluid" src={props.picture} /> </li>
+    
   );
 }
 
