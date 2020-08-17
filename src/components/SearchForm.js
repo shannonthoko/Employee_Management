@@ -29,12 +29,9 @@ function SearchForm(props) {
         <div className="form-group">
           <input
             onChange={props.handleInputChange}
-            // value={props.search}
-            // name="search"
-            // type="text"
+            type="text"
             className="form-control"
             placeholder="Employee Name"
-            // id="search"
           />
 
           <br></br>

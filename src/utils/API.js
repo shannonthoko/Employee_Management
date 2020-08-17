@@ -9,6 +9,7 @@ const men = "&&gender=male"
 export default {
   fetch: function() {
     return axios.get(BASEURL + fifty);
+    
   },
 
   fetchWomen: function () {
@@ -19,5 +20,10 @@ export default {
   fetchMen: function () {
 
     return axios.get(BASEURL + fifty + men);
+  },
+
+  name: function (query) {
+
+    return axios.get(BASEURL + "/?name=" + query);
   }
 };
