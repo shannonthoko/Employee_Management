@@ -21,7 +21,7 @@ class Container extends Component {
     API.fetch()
     .then(res => this.setState({ people: res.data.results}))
     .catch(err => console.log(err));
-    console.log(this.state.people);
+    
   }
 
   
@@ -63,6 +63,13 @@ class Container extends Component {
     console.log(response);
     const filterName = response.filter(name => name.first === this.state.search);
     this.setState({people: filterName});
+    console.log(this.state.people);
+
+    if (response.length === 0){
+
+      
+    }
+
     
 
 
