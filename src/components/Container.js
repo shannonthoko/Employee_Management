@@ -59,11 +59,11 @@ class Container extends Component {
   handleFormSubmitSearch = event => {
 
     event.preventDefault();
-    // const response = this.state.people
-    // console.log(response);
-    // const filterName = response.filter(name => name.first === this.state.search);
-    // this.setState({people: filterName});
-    // console.log(this.state.people);
+    const response = this.state.people
+    console.log(response);
+    const filterName = response.filter(name => name.first === this.state.search);
+    this.setState({people: filterName});
+    console.log(this.state.people);
     this.findName(this.state.search);
 
     }
