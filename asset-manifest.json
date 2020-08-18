@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/See-My-Employees/static/css/main.1774d38c.chunk.css",
+    "main.js": "/See-My-Employees/static/js/main.e08433be.chunk.js",
+    "main.js.map": "/See-My-Employees/static/js/main.e08433be.chunk.js.map",
+    "runtime-main.js": "/See-My-Employees/static/js/runtime-main.6d4fd4e4.js",
+    "runtime-main.js.map": "/See-My-Employees/static/js/runtime-main.6d4fd4e4.js.map",
+    "static/js/2.8a93fafc.chunk.js": "/See-My-Employees/static/js/2.8a93fafc.chunk.js",
+    "static/js/2.8a93fafc.chunk.js.map": "/See-My-Employees/static/js/2.8a93fafc.chunk.js.map",
+    "index.html": "/See-My-Employees/index.html",
+    "precache-manifest.ed6e50cde5f49ca96b58d3f2a1dcaff2.js": "/See-My-Employees/precache-manifest.ed6e50cde5f49ca96b58d3f2a1dcaff2.js",
+    "service-worker.js": "/See-My-Employees/service-worker.js",
+    "static/css/main.1774d38c.chunk.css.map": "/See-My-Employees/static/css/main.1774d38c.chunk.css.map",
+    "static/js/2.8a93fafc.chunk.js.LICENSE.txt": "/See-My-Employees/static/js/2.8a93fafc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6d4fd4e4.js",
+    "static/js/2.8a93fafc.chunk.js",
+    "static/css/main.1774d38c.chunk.css",
+    "static/js/main.e08433be.chunk.js"
+  ]
+}
